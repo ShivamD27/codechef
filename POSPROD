@@ -1,0 +1,33 @@
+// bits/stdc++.h works in linux. 
+// It loads most of the libraries of C++ required.
+#include <bits/stdc++.h> 
+typedef long long int ll;
+using namespace std;
+
+int main() {
+int t;
+cin>>t;
+while(t--){
+    int n;
+    cin>>n;
+    int a[n];
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    ll ct_neg=0;
+    ll ct_pos=0;
+    for(int i=0;i<n;i++){
+        if(a[i]==0){
+            continue;
+        }
+        else if(a[i]<0){
+            ct_neg++;
+        }
+        else{
+            ct_pos++;
+        }
+    }
+    cout<<(ct_neg*(ct_neg-1)/2)+(ct_pos*(ct_pos-1)/2)<<endl;
+}
+	return 0;
+}
